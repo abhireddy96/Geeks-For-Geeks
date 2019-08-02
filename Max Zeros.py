@@ -10,10 +10,16 @@ class Solution:
     def count_zeros(self, nums: List[int]) -> int:
         max_num = -1
         max_zeroes = 1
+
+        # Iterate over list of integers
         for i in nums:
+            # Count number of zeros
+            # check if it's greater than max zeroes got so far
             if int(str(i).count('0')) > max_zeroes:
                 max_zeroes = int(str(i).count('0'))
                 max_num = int(i)
+            # check if it's equal to  max zeroes got so far
+            # If so, check if this integer is greater than previous best
             elif int(str(i).count('0')) == max_zeroes:
                 if int(i) > max_num:
                     max_num = int(i)
